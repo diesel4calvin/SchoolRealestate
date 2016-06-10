@@ -19,8 +19,29 @@
 function executeme(){
  $input = $("#input");
  $output = $("#output");
- $type.("select").val("val2");
- $type = $output.
+ $inputype = $input("select").val();
+ $outputype = $output("select").val();
+ 
+ if ($inputype == "csv")
+ {
+  $csv = "";
+   for(var $i = 0; $i < $table.rows.length; ++$i)
+   {
+    for(var $j = 0; $j < $table.rows[$i].cols.length; ++$j)
+    {
+     if ($j > 0)
+     {
+      $csv += ",";
+     }
+      $csv += $table.rows[$i].cols[$j].val;
+      
+      
+    }
+    $csv += '\n';
+   }
+   
+   return $csv;
+ }
 }
 </script>
 </body>
