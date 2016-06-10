@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>My task</title>
+</head>
+<body>
+<form onsubmit='javascript:executeme'>
+<h4>Select input</h4>
+<select id='input'>
+<option>Stats</option>
+</select>
+ <h4>Select output</h4>
+<select id='output'>
+<option>json</option>
+<option>xml</option>
+<option>csv</option>
+</select>
+</form>
+<script type='javascript'>
+function executeme(){
+ $input = $("#input");
+ $output = $("#output");
+ $inputype = $input("select").val();
+ $outputype = $output("select").val();
+ 
+ if ($inputype == "csv")
+ {
+  $csv = "";
+   for(var $i = 0; $i < $table.rows.length; ++$i)
+   {
+    for(var $j = 0; $j < $table.rows[$i].cols.length; ++$j)
+    {
+     if ($j > 0)
+     {
+      $csv += ",";
+     }
+      $csv += $table.rows[$i].cols[$j].val;
+      
+      
+    }
+    $csv += '\n';
+   }
+   
+   return $csv;
+ }
+}
+</script>
+</body>
+</html>
